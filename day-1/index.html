@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <!-- ამ კოდში როცა წითელი ყუთი მწვანე ყუთის მარჯვენა მხარეს მივა,
+         უკან რო დაბრუნდეს მარცხენა მხარეს, და მარცხენა მხარეს რომ 
+         მივა ისევ მარჯვენა მხარეს რომ მივიდეს და ეს ციკლი სამუდამოდ
+          გაგრძელდეს და Sololearn Creating Animation-ის ჩათვლით -->
+    <style>
+      #container {
+        width: 200px;
+        height: 200px;
+        background: green;
+        position: relative;
+      }
+      #box {
+        width: 50px;
+        height: 50px;
+        background: red;
+        position: absolute;
+      }
+      </style>
+      <div id="container">
+         <div id="box"> </div>
+      </div>
+      <script>
+        let pos = 0;
+        /*I create variable call ruele wich contain boolean: while
+         'rule' true must additon +1 to the 'pos' othervise deduction -1  */
+        let rule = true;
+
+        // I acces to the box element in html
+        let box = document.getElementById("box");
+        /*I wirte build in function call setInteval wich ontiains
+         function and interval time I call move thi teh function
+          area and ofcorse delear funciotn */
+        let t = setInterval(move, 10);
+        // delcaer/inictialasion function
+
+        function move() {
+          // if trule ture as I sad 
+          if(rule == true){
+            pos++;
+            box.style.left = pos+"px";
+            console.log(pos)
+          }else{
+            pos --;
+            box.style.left = pos+"px";
+          }
+
+          if(pos == 150){
+            rule = !rule;
+          }else if(pos == 0){
+            rule = !rule;
+            console.log('Davita is GOAT');
+          }
+        }
+
+      </script>
+  </body>
+</html>
