@@ -1,0 +1,158 @@
+<!-- Event Handling დავალებები 
+    1) Button Click Counter
+
+Create a webpage with a button and a counter. Write JavaScript to 
+increment the counter each time the button is clicked. Display the
+ updated count on the webpage.
+
+2) Mouse Hover Color Change
+
+Create a webpage with a div element. Write JavaScript to change
+ the background color of the div when the mouse hovers over it.
+  Change it back to the original color when the mouse leaves the div.
+
+3) Show/Hide Content:
+
+Create a button and a paragraph of text on a webpage. Write JavaScript
+ code to toggle the visibility of the paragraph when the button is clicked.
+  If it’s visible, hide it; if it’s hidden, show it.
+
+4) Change Background Color on Button Click:
+
+Create a webpage with a button and a blank area (e.g., a div) to serve as
+ the content area. Write JavaScript code to change the background color of
+  the content area when the button is clicked. Define a few different background
+   colors, and each time the button is clicked, cycle through these colors. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+</head>
+<body style="display: flex; gap:  20px; zoom: 2;">
+    <section class="section-1" style="display: flex; border: 1px solid green; color: green; width: 200px; border-radius: 20px; overflow: hidden;">
+        <button class="ex-1" style="padding: 20px; background-color: green; border:none; cursor: pointer; color: white;">Click bro to increment</button>
+        <h2 class="inc"></h2>
+    </section>
+    <section class="section-2" style="display: flex; border: 1px solid red; color: red; width: 200px; border-radius: 20px; overflow: hidden;"></section>
+    <section class="section-3" style="display: flex; border: 1px solid blueviolet; color: blueviolet; width: 200px; border-radius: 20px; overflow: hidden;">
+        <p class="p-2">Lorem ipsum dolor</p>
+        <button class="ex-2" style="padding: 20px; background-color: blueviolet; border:none; cursor: pointer; color: white;">Click bro to hide</button>
+    </section>
+    <section class="section-4" style="border: 1px solid black; color: inherit; width: 200px; border-radius: 20px; overflow: hidden;">
+        <div class="box" style="height:50px"></div>
+        <div class="color-cotniaer" style="display: flex;margin-left: 50px; gap: 10px;">
+            <div class="color" style="width: 20px; border: 1px solid red; border: 1px solid black; border-radius: 50%; height: 20px; cursor: pointer; background-color: red;"></div>
+            <div class="color" style="width: 20px; border: 1px solid yellow; border: 1px solid black; border-radius: 50%; height: 20px; cursor: pointer; background-color: yellow;"></div>
+            <div class="color" style="width: 20px; border: 1px solid gray; border: 1px solid black; border-radius: 50%; height: 20px; cursor: pointer; background-color: gray;"></div>
+        </div>
+    </section>
+    <section class="section-4 section-5" style="border: 1px solid black; color: inherit; width: 200px; border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <button style="border: none; background-color: green; border-radius: 5px; color:white; overflow: hidden; cursor: pointer;">Click bro</button>
+    </section>
+    
+<script>
+    // variables to acces
+    const btn = document.querySelector('.ex-1');
+    const inc = document.querySelector('.inc');
+    const bg = document.querySelector('.section-2');
+    const btn2 = document.querySelector('.ex-2');
+    const par2 = document.querySelector('.p-2');
+    const bg2 = document.querySelector('.section-4');
+    const colorArr = document.querySelectorAll('.color');
+    const bg3 = document.querySelector('.section-5');
+    console.log(bg3)
+
+    
+    // variables for calculate
+    let counter = 0;
+    
+    // hide 
+    let counter2 = 0;
+    let rule = true;
+    
+    // bg change
+    let bgCount = 0;
+    // event listenrs and functions 
+    // counter
+    btn.addEventListener('click',() =>{
+        counter++;
+        inc.innerHTML = counter
+    })
+
+    // background color change
+    bg.addEventListener('mouseover', () => {
+        bg.style.backgroundColor = 'red'
+        console.log('Davita is Goat')
+    })
+    bg.addEventListener('mouseout', () =>{
+        bg.style.backgroundColor = 'inherit'
+    })
+
+    // hide
+    btn2.addEventListener('click', () =>{
+        if(rule == true){
+            par2.style.display = 'none'
+            counter2++
+            console.log(counter2)
+        }else{
+            par2.style.display = 'block'
+            rule = !rule;
+        }
+
+        if(counter2 == 1){
+            rule = !rule;
+            counter2 = 0;
+        }
+    }) 
+
+    // bg change 2.0
+    colorArr[0].addEventListener('click', () =>{
+        bgCount = 1
+        bgChanger()
+        console.log(bgCount);
+        
+    })
+    colorArr[1].addEventListener('click', () =>{
+        bgCount = 2
+        bgChanger()
+    })
+    colorArr[2].addEventListener('click', () =>{
+        bgCount = 3
+        bgChanger()
+    })
+    function bgChanger (){
+        switch(bgCount) {
+            case 1:
+                bg2.style.backgroundColor = 'red'
+                break;
+            case 2:
+                bg2.style.backgroundColor = 'yellow'
+                break;
+            case 3:
+                bg2.style.backgroundColor = 'gray'
+                break;
+        }
+    }
+
+    // bg 3.0
+    let colorArr2 = ['black','reed','blue','gray'];
+    let indexColor = 0;
+    const bgRandomizer =  () => {
+        bg3.addEventListener('click', () =>{
+            bg3.style.backgroundColor = colorArr2[indexColor];
+            indexColor++;
+            console.log(colorArr2[indexColor])
+            if(indexColor == colorArr2.length){
+                indexColor = 0;
+                console.log('Why Davita is GOAT? X)')
+            }
+        })
+    }   
+    
+    bgRandomizer();
+</script>
+</body>
+</html>

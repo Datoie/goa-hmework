@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <script>
+        // I bring date objet to get use oure function forever
+        // I access tp date object
+        let currnetDate = new Date();
+
+        // I accest date object and get current Year
+        let currentYear = currnetDate.getFullYear();
+        
+        // I create perons birth date to calculate them ages
+        let peronsYearsObj = {
+            davit:2004,
+            gio:1998,
+            sali:1998
+        };
+
+        // i use for in loop to access every value of peronsYearsObj and eqaul
+        // to present years - property value for example 2004: 2023 - 2004 // 19
+        for(let name in peronsYearsObj){
+            peronsYearsObj[name] =  currentYear - peronsYearsObj[name]; 
+        };
+        console.log(peronsYearsObj);
+    </script>
+</body>
+</html>

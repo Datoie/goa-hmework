@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+    <script>
+        // Object Add Methods 
+        let obj = {
+            set: (arr) => {
+                let setArr = [];
+                
+                for(let i = 0;i < arr.length; i++){
+                    if(setArr.includes(arr[i])){
+                        continue;
+                    }else{
+                        setArr.push(arr[i]);
+                    }
+                }
+                return setArr
+            }
+        }
+        console.log(obj.set([1,2,2,3,3,3,3,3,3,3,3,3,33,22,2,23,44]))
+    </script>
+</body>
+</html>

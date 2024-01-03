@@ -1,0 +1,40 @@
+<script>
+/* HW #1 Task: Create a class Rectangle with properties for width and height.
+The class should have methods to calculate area and perimeter. Instantiate
+a few rectangles and display their area and perimeter. */
+
+/*HW #2 Task: Extend 
+the Rectangle class to create a Square class. The Square class only needs 
+one side length (as opposed to width and height). Ensure that you can stil
+l calculate area and perimeter for the square. HW #3 Task: Create a class 
+Library and a class Book. The Library class should have a property that is
+an array of Book objects. Implement methods in the Library class to add books,
+remove books, and find books by title or author. HW #4 Create a new 
+JavaScript file named circle.js Create a class named Circle The class 
+should have two properties: Pi: This should be a static property with
+a value of 3.14159. (You can use the built-in Math.PI for a more accurate
+value if desired.) radius: This should be a dynamic property initialized
+through the constructor. The constructor of the Circle class should accept
+one parameter, radius. Ensure that the radius is positive. If a negative
+radius or zero is provided, throw an error with a relevant message. area():
+This method should return the area of the circle. Formula: Pi * radius^2.
+perimeter(): This method should return the perimeter (circumference)
+of the circle. Formula: 2 * Pi * radius.*/
+
+
+class Rectangle{
+    constructor(widht, height){
+        this.widht = widht;
+        this.height = height;
+    }
+    calulateArea (){
+        return this.widht * this.height
+    };
+    perimeter () {
+        return (this.widht + this.height) * 2
+    }
+}
+const newRectangle = new Rectangle(10, 20);
+console.log(newRectangle.calulateArea())
+console.log(newRectangle.perimeter());
+</script>

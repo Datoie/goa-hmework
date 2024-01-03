@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <script>
+        // 2) დაშალეთ სამ ელემენტიანი მასივი სამ ცვლადად. დაშალეთ სამ ელემენტიანი ობიექტი და ყველა კუთვნილებას მიანიჭე ახალი სახელი
+        let arr = [1,3,4];
+        let [one,two,three] = arr;
+        console.log(one, two, three);
+
+        let obj = {
+            name: 'Davit',
+            fullName: 'Grdzelo',
+            age:14
+        };
+
+        let {name: newName, fullName: newFullName, age: newAge} = obj;
+        console.log(newName, newFullName, newAge);
+
+        for (let key in obj) {
+            let newKey = `new${key.charAt(0).toUpperCase()}${key.slice(1)}`;
+            window[newKey] = obj[key];
+            };
+        console.log(obj)
+        console.log(newName, newFullName, newAge);
+
+        const objKeyNameChanger = (obj) => {
+            let newObj = {};
+            Object.keys(obj).forEach ( el => {
+                newObj[`new${el.charAt(0).toUpperCase()}${el.slice(1)}`] = obj[el];
+            });
+            return newObj;
+        }
+        console.log(objKeyNameChanger(obj))
+    </script>
+</body>
+</html>

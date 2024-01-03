@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <script>
+        // რესტზე იყოს 2 მაგალითი
+        const myFunnc = (...arr) => {
+            arr.sort((a, b) => a - b );
+            return arr
+        }
+        console.log(myFunnc(1,56,6,6,6,67,8,99,0,2,2,'adasd'))
+        // რესტზე იყოს 2 მაგალითი
+        // rest operator ი დარჩენილ ელემენტებს ინახავს
+        const myFunnc2 = (num1,num2,...arr) => {
+            arr.sort((a, b) => a - b );
+            return arr
+        }
+        console.log(myFunnc2(1,56,6,6,6,67,8,99,0,2,2,'adasd'))
+    </script>
+</body>
+</html>

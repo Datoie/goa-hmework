@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1) გააკეთე წიგნის ობიექტი რომელსაც ექნება ეს ფროფერთიები: title, author, years
+         . და ამ ფროფერთიებში მომხმარებელმა უნდა შეიტანოს prompt ის საშუალებეით თითოეული ფროფერთის მნიშვნელობა 2)
+          მეორე. გააკეთონ ობიექტი რომელსაც ერქმევა Circle და ექნება ფროფერთი Radius და მეთოდი calculateArea.
+           როცა მომხმარებელი შემოიტანს რადიუსს ამ ობიექტში calculateArea მეთოდი გამოითვლის ამ წრის ფართობს.
+            3) შექმენით ობიექტი რომელსაც ერქმევა Student, მისი ფროფერთიები იქნება firstName, lastName და მასივი
+            რომელსაც ერქმევა grades, მომხმარებელმა უნდა შემოიტანოს ეს ყველა ინფორმაცია(grades რამოდენიმე უნდა იყოს)
+            გადააქციონ მომხმარებლის ნიშნები მასივად და მიანიჭონ ის grades ცვლადს, აგრეთვე შექმენით მეთოდი რომელიც
+            გამოითვლის Average Scores ს Student ობიექტში-->
+          
+          <!-- exercise 1 -->
+        <div class="book-cotnianer">
+            <h1>book</h1>
+            <div class="text-contianer">
+                <h2 class="text-t">Title: </h2>
+                <h2 class="ansver-t"></h2>
+            </div>
+            <div class="text-contianer">
+                <h2 class="text-t">Author: </h2>
+                <h2 class="ansver-t"></h2>
+            </div>
+            <div class="text-contianer">
+                <h2 class="text-t">Years: </h2>
+                <h2 class="ansver-t"></h2>
+            </div>
+        </div> 
+        <br>
+        <!-- exercise 2 -->
+        <div class="circle-contianer book-cotnianer">
+            <h2 class="circle-t circle">Circle</h2>
+            <h2 class="circle-t calculate-area">Calculate Area</h2>
+            <div class="radius-contianer">
+                <h2 class="radius">Radius:</h2>
+                <h2 class="radius"></h2>
+                <h2 class="error-t" style="color: red;">Click Button</h2>
+            </div>
+        </div>
+        <!-- exercise 3 -->
+        <div class="book-cotnianer student-contnianer">
+            <h2 class="student circle">Students</h2>
+            <div class="text-student">
+                <h2 class="first-name">First Name:</h2>
+                <h2 class="last-name">Last Name:</h2>
+                <h2 class="first-name grades">grade of student 1:</h2>
+                <h2 class="first-name grades">grade of student 2:</h2>
+                <h2 class="radius"></h2>
+            </div>
+        </div>
+        <script src="app.js"></script>
+</body>
+</html>

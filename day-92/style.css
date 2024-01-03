@@ -1,0 +1,59 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+}
+body{
+    display: flex;
+    gap: 20px;
+}
+/* book-cotnianer */
+.book-cotnianer{
+    border: 5px solid gray;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    color: gray;
+}
+h1{
+    padding: 10px;
+    border: 2px solid gray;
+    width: 87px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.text-contianer{
+    display: flex;
+}
+
+/* circle-contianer */
+.circle-contianer{
+    border: 5px solid green;
+    color:green
+}
+.circle {
+    padding: 10px;
+    border: 2px solid green;
+    width: 87px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.calculate-area{
+    border: 2px solid green;
+    border-radius: 20px;
+    width: 120px;
+    padding: 10px;
+    cursor: pointer;
+}
+.radius-contianer{
+    display: flex;
+}
+/* book-cotnianer */
+.student-contnianer{
+    border: 5px solid purple;
+    color:purple;
+}
+.student{
+    width: 100px;
+    border: 2px solid purple;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <script>
+        // 5) Object Add Methods
+        // define function outside the obj
+        const multi = (a,b) => {
+            console.log(a * b)
+        };
+
+        let calculator = {
+            sum:(a,b) =>{
+                console.log(a + b)
+            },
+            multi:multi(3,2)
+        };
+        // define paramteters ouside the object and acces to obj sum
+        calculator.sum(1,3);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPcE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+<body style="box-sizing: border-box;font-family: sans-serif;color:wheat ;align-items: center; display: flex; justify-content: center; height: 100vh; background-color:currentColor ">
+    <div class="person-container" style="padding: 20px; max-width: 500px; height: 500px; background-color: chocolate; border-radius: 10px; margin-right: 20px;">
+        <div class="text-continer"  style="display: flex;">
+            <h2>Name:</h2>
+            <h2 id="nameText">&nbsp;Davit</h2>
+        </div>
+        <div class="text-continer" style="display: flex;">
+            <h2>fullname:</h2>
+            <h2 id="fullname">&nbsp;Grdzelo</h2>
+        </div>
+        <div class="text-continer"  style="display: flex;">
+            <h2>points:</h2>
+            <h2 id="points">&nbsp;0</h2>
+        </div>
+        <div class="text-continer"  style="display: flex;">
+            <h2>try:</h2>
+            <h2 id="try">&nbsp;0</h2>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="rule-continer">
+            <h2 style="font-size: 18px;">Rules</h2>
+            <h1 style="font-size:30px;">Click the button and earn points U have 10 try</h1>
+        </div>
+    </div>
+    <div class="container" style=" position: relative;background-color:brown; border-radius: 10px; width: 300px; height: 400px; overflow:hidden">
+        <div id="box" style="background-color: burlywood; width: 30px;height: 30px; border-radius: 3px;position: relative; cursor: pointer;"></div>
+    </div>
+</body>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    @media (max-width:920px) {
+        body{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 20px;
+            padding: 20px;
+        }
+        .person-container{
+            margin-right: 0;
+        }
+
+    }
+    </style>
+    <script>
+        // elemtns
+        // text contents
+        const name = document.getElementById('nameText');
+        const fullName = document.getElementById('fullname');
+        const points = document.getElementById('points');
+        const tryS = document.getElementById('try');
+        console.log(name);
+
+        // box content
+        const box = document.getElementById('box');
+
+        // make arr for points :)
+        let poinArr = [];
+        let counter = 0;
+
+        // add event listener mouseover to go oure box to the random position when we mouse ouver it
+        // i use also math random
+        box.addEventListener('mouseover', () => {
+            counter++;
+            box.style.position = 'absolute';
+            box.style.left = `${Math.floor(Math.random() * 270)}px`;
+            box.style.top = `${Math.floor(Math.random() * 270)}px`;
+
+            // if couner is equal 10 game will ower X)
+            if(counter == 10){
+                alert('u loose game X) try again')
+                counter = 0;
+                box.style.left = '0';
+                box.style.top = '0';
+            }
+            tryS.innerHTML = `&nbsp${counter}`;
+            console.log(counter);
+        });
+
+        // make obj to get client name and fullname 
+        const personObj = {
+            name:prompt('ENTER URE NAME'),
+            lastName:prompt('ENTER URE LASTNAME')
+        };
+        name.innerHTML = personObj.name;
+        fullName.innerHTML = personObj.lastName;
+
+
+        while(personObj.name === ''){
+            let newName = prompt('ENTER URE NAME');
+            if(newName != ''){
+                name.innerHTML = '&nbsp'+newName;
+                break;
+            }
+        }
+        while(personObj.lastName === ''){
+            let newName1 = prompt('ENTER URE LASTNAME');
+            if(newName1 != ''){
+                fullName.innerHTML = '&nbsp'+ newName1;
+                break;
+            }else{
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,132 @@
+<!-- HW #1 Create Classes: Design and implement the following JavaScript classes:
+
+Natural: Represents a natural number. Integer: Represents an integer number. Rational:
+ Represents a rational number (fraction). Irrational: Represents an irrational number. Real:
+  Represents a real number. Imaginary: Represents an imaginary number. Complex: Represents a 
+  complex number. Properties and Methods: Each class should have appropriate properties
+   and methods related to its mathematical concept. Define constructors and any necessar
+   y methods for each class.
+
+Demonstration: Create instances of these classes in your JavaScript program. Demonstrate
+ the usage of these classes by performing operations or calculations relevant to each concept.
+
+Documentation: Add comments to your code to explain the purpose of each class and its methods.
+
+Bonus: For an extra challenge, you can implement additional features such as:
+
+Overloading operators (e.g., +, -, *) for mathematical operations between objects of different
+ classes. Implementing mathematical operations (e.g., addition, subtraction, multiplication) for the Complex class.
+ -->
+
+ <script>
+    class Natural {
+        // creating constructor and define the paramether
+        constructor(number){
+            this.number = number
+        }
+
+        // I craete is natural function and if this element not includes (!) '.' it means that element is not float and must be this elemt more than  0  
+        isNatural(){
+            if(!String(this.number).includes('.') && this.number >= 0){
+                return 'good job man 👍'
+            }else{
+                return 'try use natural number'
+            }
+        }
+    }
+
+    class Integer{
+        // creating constructor and define the paramether
+        constructor (number){
+            this.number = number
+        }
+
+        // I create fucntuion of irational functions wich is none negative float type numbers
+        isRationalNumber(){
+            if(String(this.number).includes('.') && Number(this.number) && this.number >= 0 ){
+                return 'good job man 👍'
+            }else{
+                return 'try use rational number'
+            }
+        }
+
+        // I add arry of irational numbers and if one of the elemnt equal this.number it should equal true
+        isIrationalNumber(){
+            let irationalArr = [3.14, 2**.5, 72**.5, 8/23**.5]
+            if(!isNaN(this.number) && irationalArr.includes( (this.number) )){
+                return 'good job man 👍'
+            }else{
+                return 'try use irational number'
+            }
+        }
+    }
+
+    class Real{
+        constructor(number){
+            this.number = number
+        }
+        isRealNumber(){
+            if(Number(number)){
+                return 'good job man 👍'
+            }else{
+                return 'try use real number'
+            }
+        }
+    }
+    const number = '3.14'
+    
+    // natural numbers 
+    // define new natural function
+    const newNatural = new Natural(number);
+    
+    //acces one of method form class 
+    const isNatural = newNatural.isNatural()
+    console.log(isNatural)
+
+    // integer numbers
+    const newInteger = new Integer(number)
+    const isRationalNumber = newInteger.isRationalNumber()
+    const isIationalNumber = newInteger.isIrationalNumber()
+    console.log(isIationalNumber)
+    console.log(isRationalNumber)
+
+    // real number
+    const newReal = new Real(number)
+    const isRealNumber = newReal.isRealNumber()
+    console.log(isRealNumber)
+
+    
+    // extra exam 
+
+
+    // creating complex class wich takes rest parameterr this parramters it takes all of the elements. After that I define arr
+    class Complex {
+        constructor(...arr){
+            this.arr = arr
+        }
+
+        // I make method of claas wich is uses reduce method 
+        add(){
+            return this.arr.reduce( (acc, curr) => acc + curr)
+        }
+
+        sub(){
+            return this.arr.reduce( (acc, curr) => acc - curr)
+        }
+        multi(){
+            return this.arr.reduce( (acc, curr) => acc * curr)
+        }
+        multi(){
+            return this.arr.reduce( (acc, curr) => acc * curr)
+        }
+        divis(){
+            return this.arr.reduce( (acc, curr) => acc / curr)
+        }
+    }
+
+    const newComplex = new Complex(4,3 );
+    console.log(newComplex.add())
+    console.log(newComplex.sub())
+    console.log(newComplex.multi())
+    console.log(newComplex.divis())
+ </script>

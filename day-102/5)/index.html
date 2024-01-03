@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <script>
+        // … Spread Operator 
+        let arr = [1,2,2];
+        const myFunc = (a,b,c) => {
+            
+            return a + b +c
+        };
+        console.log(myFunc(...arr));
+
+        let copyArr = [...arr];
+        console.log(copyArr)
+    </script>
+</body>
+</html>

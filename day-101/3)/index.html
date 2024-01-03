@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <script>
+        // spread operators ...
+        // spread operator have multiple usses 
+        let arr = [1,2,4,4,5,5];
+        // copy arr
+        let copyArr = [...arr];
+        
+        // wwrite functions add new elements 
+        console.log( [...arr,7,8,9]);
+
+        const sum =  (a ,b) =>{
+            return a + b;
+        };
+        console.log(sum(arr)); // bring us error
+        console.log(sum(...arr)) //bring us correct answer
+    </script>
+</body>
+</html>

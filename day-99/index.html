@@ -1,0 +1,185 @@
+<!-- Create an Object: Declare an empty object named person.
+
+Add Properties: Add properties name, age, and email to the person object with values of your choice.
+
+Access Property: Access and log the name property of the person object.
+
+Modify Property: Change the age property of the person object to a new value.
+
+Add Method: Add a method called introduce to the person object that logs a greeting message with the person’s name and age.
+
+Nested Objects: Create an object called address with properties street, city, and postalCode. Add this as a property of the person object.
+
+Access Nested Property: Access and log the city property within the address object.
+
+Object Comparison: Create two objects, person1 and person2, with the same properties and values. Check if they are equal.
+
+Object Iteration: Create a function that loops through and logs all properties and their values of the person object.
+
+Object Deletion: Remove the email property from the person object.
+
+Object Length: Write a function that counts and logs the number of properties in the person object.
+
+Object Keys: Write a function that logs all the keys (property names) of the person object.
+
+Object Values: Write a function that logs all the values of the properties in the person object. Function Declaration: Declare a function named greet that logs “Hello, world!” when called.
+
+Function Expression: Create a variable sayHi and assign it a function expression that logs “Hi there!” when called.
+
+Function Parameters: Write a function called add that takes two parameters, a and b, and returns their sum.
+
+Function Invocation: Call the add function from exercise 3 with arguments 7 and 3, and log the result.
+
+Function Scope: Declare a variable x inside a function. Try to log the value of x outside of that function. What does it log?
+
+Arrow Function Exercises:
+
+Arrow Function Basics: Create an arrow function called double that takes a number as a parameter and returns its double.
+
+Arrow Function with Implicit Return: Refactor the greet function from exercise 1 using an arrow function with an implicit return.
+
+Arrow Function in Object: Create an object person with an arrow function property sayHello that logs “Hello!” when called. default values in function -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name: 'dd',
+            age: '',
+            emal:'',
+            // Nested Objects: Create an object called address with properties street, city, and postalCode. Add this as a property of the person object.
+            address: {
+                street: '',
+                city: '',
+                postalCode: ''
+            }
+        };
+        // acces to person object and access to the propery name: 1 way
+        console.log(person.name);
+        
+        // acces to person object and access to the propery name: 2 way
+        console.log(person['name']);
+
+        // Modify Property: Change the age property of the person object to a new value.
+        console.log(person['age'] = 19);
+
+        // Add Method: Add a method called introduce to the person object that logs a greeting message with the person’s name and age.
+        person.name = 'davit' // add value of property
+        console.log(`Hello ${person.name} ypu are ${person.age} years old`);
+
+
+
+        // access to the addres
+        // Access Nested Property: Access and log the city property within the address object.
+        console.log(person.address.city = 'Tbilisi'); //  I ad value because it dont have X)
+        
+        // Object Comparison: Create two objects, person1 and person2, with the same properties and values. Check if they are equal.
+        let person1 = {
+            name: 'davit'
+        };
+        let perosn2 = {
+            name: 'davit'
+        };
+        console.log(person1.name == perosn2.name); // it logs true
+
+
+
+        // Object Iteration: Create a function that loops through and logs all properties and their values of the person object.
+        const ojbLoop = () =>{ 
+                let person3 = {
+                    0: 'davit',
+                    1: 'grdzelisvhili',
+                    2: '19'
+                };
+                for(let i = 0; i < 3; i++){
+                    console.log(person3[i]);
+                };
+        };
+        ojbLoop();
+
+
+        // Object Deletion: Remove the email property from the person object.
+        let person4 = {
+            name: 'davit',
+            emal:'grdasd@gmial.com'
+        }
+        delete person4.emal; // if we wwant to delete object porperty we are weitring delete back from it
+        console.log(person4)
+        
+        // Object Length: Write a function that counts and logs the number of properties in the person object.
+        counter = 0;
+        console.log(Object.keys(person).length) // there is pnew way and
+
+
+        for(let prop in person){
+            if(person.hasOwnProperty(prop)){
+                counter++;
+            }
+        }
+        //  hasOwnProperty method cheks if there is porpery in object
+        console.log(counter)
+
+
+
+        // Object Keys: Write a function that logs all the keys (property names) of the person object.
+        const objKeys = () =>{
+            arr = [];
+            for(let prpo in person){
+                arr.push(prpo);
+            };
+            console.log(arr);
+        };
+        // objKeys();
+        
+        // Object Values: Write a function that logs all the values of the properties in the person object. Function Declaration: Declare a function named greet that logs “Hello, world!” when called.
+        const objValues = () => {
+            // one way to access values
+            valueArr = []
+            for( let prop1 in person){
+                valueArr.push(person[prop1]);
+            };
+            console.log(valueArr);
+
+            // second way
+            console.log(Object.values(person));
+            
+        };
+        objValues();
+
+        // Function Expression: Create a variable sayHi and assign it a function expression that logs “Hi there!” when called.
+        const sayHi = () => {
+    
+            console.log('Hi there!')
+        };
+        sayHi();
+
+        // Function Parameters: Write a function called add that takes two parameters, a and b, and returns their sum.
+        // Function Invocation: Call the add function from exercise 3 with arguments 7 and 3, and log the result.
+
+        const add = (a,b) => {
+            return a + b;
+        }
+        console.log(add(7, 3)); // 3 correct :)
+
+        // Function Scope: Declare a variable x inside a function. Try to log the value of x outside of that function. What does it log?
+        const FunScope = () =>{
+            const x = 0;
+        }
+        console.log(x) // x is not definde it need dclaration
+
+//         Function Scope: Declare a variable x inside a function. Try to log the value of x outside of that function. What does it log?
+
+// I alrady write arrow functions :))
+//         Arrow Function Exercises
+//         Arrow Function Basics: Create an arrow function called double that takes a number as a parameter and returns its double.
+//         Arrow Function with Implicit Return: Refactor the greet function from exercise 1 using an arrow function with an implicit return.
+//         Arrow Function in Object: Create an object person with an arrow function property sayHello that logs “Hello!” when called. default values in function -->
+    </script>
+
+</body>
+</html>

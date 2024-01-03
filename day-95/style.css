@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    font-family: sans-serif;
+    margin: 1% 20%;
+    color: rgb(60, 58, 58);
+    display: grid;
+    gap: 20px;
+}
+a{
+    color: rgb(60, 58, 58);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid brown;
+    display: none;
+}
+ul{
+    display: flex;
+    gap: 20px;
+}
+span{
+    font-size: 40px;
+    cursor: pointer;
+}
+a:hover{
+    color:rgb(212, 55, 55);
+}
+/* hero section */
+.hero-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+}
+.cta-button{
+    background-color: brown;
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+#btn:hover{
+    color: #fff;
+}

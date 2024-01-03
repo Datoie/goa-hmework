@@ -1,0 +1,83 @@
+<!-- HW #2 Objective: To create a JavaScript class Languages that represents a database of programming languages.
+     Each programming language should be represented as an object with attributes like name, creator, year, and a brief description.
+
+Requirements:
+
+Create a class called Languages that will serve as the programming languages database.
+
+Implement a method within the Languages class to add a new programming language to the database.
+ This method should take parameters for the name, creator, year, and description of the language 
+ and create a new language object. The method should then add this object to the database.
+
+Implement a method to retrieve information about a specific programming language by name. This
+ method should take the name of the language as a parameter and return the details (name, creator,
+  year, description) of that language.
+
+Implement a class method within the Languages class to list all the programming languages in the
+ database, displaying their names in alphabetical order.
+
+Create an instance of the Languages class and add at least five different programming languages to
+ the database.
+
+Demonstrate the use of your Languages class by adding, retrieving, and listing programming languages
+ in a JavaScript program. -->
+
+<script>
+// crate class
+class Languages{
+    // create constructor and give it arr
+    constructor(){
+        this.arr = [] //database of programing languages
+    }
+
+    addLanguage(name, creator, year, brief){
+        // create object and define names 
+        const languageObj = {name: name, creator: creator, year: year, brief: brief}
+        this.arr.push(languageObj) // add to database
+        return this.arr
+    }
+    findLanguae(name){
+        // acces each element to oure database arr and if it equal to oure parameter it sould return name
+        return this.arr.find(obj => obj.name === name) || null
+    }
+
+    alphaOrder() {
+        // create copy of oure database arry
+        let sortedArr = this.arr;
+
+        /* create loop and I give it sortedArr length(3) -1 because we are sorting and we are must
+         acces to second index of arry and to avid
+        error we are decrees with -1 : when we acces last element (1) +1 is eqaul 2 and not 3*/
+        for (let i = 0; i < sortedArr.length - 1; i++) {
+        
+            /* I create second loop to change values and and give correct position: also 
+            I give length to -1 and -i this i is already checked elements and to avoid load we are deccress with -i*/
+            for (let j = 0; j < sortedArr.length - i - 1; j++) {
+
+                // we are accessing to the object names and compare each other if indexed element is moore than next index it should change value
+                if (sortedArr[j].name > sortedArr[j + 1].name) {
+                    let temp = sortedArr[j]; // save original name
+                    sortedArr[j] = sortedArr[j + 1]; // curent elment equals next ellement
+                    sortedArr[j + 1] = temp; // next element equals original name temp
+                }
+            }
+        }
+        // return sorted arr
+        return sortedArr
+    }
+}
+// create new language
+const newLanguage = new Languages()
+
+// adding objecs
+newLanguage.addLanguage('pyhton', 'Guido van Rossum,',' 1991', 'Python is a high-level, general-purpose programming language')
+newLanguage.addLanguage('c#', 'Anders Hejlsberg ',' 2000', 'C# is an object-oriented, component-oriented programming language')
+newLanguage.addLanguage('java', 'James Gosling,',' 1995', 'Java is a high-level, class-based, object-oriented programming language')
+newLanguage.addLanguage('c++', 'Bjarne Stroustrup',' 1985', 'C++ is an object-oriented programming language')
+newLanguage.addLanguage('javaScript', 'James Gosling,',' 1995', 'JavaScript , often abbreviated as JS, is a programming language and core technology of the World Wide Web,')
+newLanguage.alphaOrder()
+
+const findLanguae = newLanguage.findLanguae('c#')
+console.log(findLanguae)
+console.log(newLanguage)
+</script>

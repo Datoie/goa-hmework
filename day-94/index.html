@@ -1,0 +1,67 @@
+<!-- Exercise 1: Event Bubbling Create a nested set of HTML elements (e.g., divs inside divs).
+     Add event listeners to both the inner and outer elements to demonstrate event bubbling.
+      Log a message indicating which element’s event handler was triggered. Exercise 2: Event
+      Capturing Modify Exercise 2 to demonstrate event capturing. Add event listeners with the
+       true parameter to listen for events during the capturing phase. Again, log a message 
+       indicating which element’s event handler was triggered. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="out box">
+        <div class="mid box box-2">
+            <div class="inner box box-3"></div>
+        </div>
+    </div>
+    <style>
+        body{
+            zoom: 6;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        .box-2{
+            background-color: green;
+            width: 25px;
+        }
+        .box-3{
+            background-color: blue;
+            width: 12.5px;
+        
+        }
+    </style>
+    <script>
+        const divArr = document.querySelectorAll('div');
+        const boxArr = document.querySelectorAll('.box');
+        console.log(boxArr);
+
+        // add event listeners excersie 1 bubbling has false as a default and it is starging from the DOM roots
+        divArr[0].addEventListener('click',() => {
+            console.log('out');
+        })
+        divArr[1].addEventListener('click',() => {
+            console.log('mid')
+        })
+        divArr[2].addEventListener('click',() => {
+            console.log('inner')
+        })
+
+        // add event listeners excersie 2 captureing u should write true it is starting from the DOM tree start
+        divArr[0].addEventListener('click',() => {
+            console.log('out-1');
+        },true)
+        divArr[1].addEventListener('click',() => {  
+            console.log('mid-2')
+        },true)
+        divArr[2].addEventListener('click',() => {
+            console.log('inner-3')
+        },true)
+    </script>
+</body>
+</html>

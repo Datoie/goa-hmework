@@ -33,23 +33,30 @@
 
         // I acces to the box element in html
         let box = document.getElementById("box");
+
         /*I wirte build in function call setInteval wich ontiains
          function and interval time I call move thi teh function
           area and ofcorse delear funciotn */
         let t = setInterval(move, 10);
-        // delcaer/inictialasion function
 
+        // delcaer/inictialasion function
         function move() {
-          // if trule ture as I sad 
+
+          // if condition is ture as I sad adition +1 to pse and also
+          // accses to box element and stlye left posiotion and additon pose and 'px'
+          // because only string can be style in DOM  
           if(rule == true){
             pos++;
             box.style.left = pos+"px";
             console.log(pos)
+            // else decres
           }else{
             pos --;
             box.style.left = pos+"px";
           }
 
+          /* conditon if pos reach 150 rule must become opposite I mena false an oure alogrightm
+          can run until we dont change the code */  
           if(pos == 150){
             rule = !rule;
           }else if(pos == 0){

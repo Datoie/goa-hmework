@@ -1,0 +1,54 @@
+<script>
+/*#3 Task: Create a class 
+Library and a class Book. The Library class should have a property that is
+an array of Book objects. Implement methods in the Library class to add books,
+remove books, and find books by title or author. HW*/
+
+
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+
+}
+class BookArr{
+    constructor(...arr){
+        this.arr =  arr;
+    }
+
+    addNewObj(title, author){
+        const newObj = new Book(title, author)
+        this.arr.push(newObj)
+
+        return this.arr
+    }
+
+    findeIndex(title, author){
+        const arrIndex =  this.arr.findIndex(el => el.title === title)
+        return arrIndex
+    }
+
+    removeClass(indexValue){
+        let index = this.arr.findIndex(el => el.title === indexValue  )
+        this.arr.splice(index,1)
+        return this.arr
+    }
+    
+}
+const newBook = new Book('davit-1', 'grdzeloo-1');
+const newBook2 = new Book('davit-2', 'grdzeloo-2');
+const newBook3 = new Book('davit-3', 'tyeshel:)');
+
+const newBookArr = new BookArr(newBook, newBook2,newBook3);
+
+// add
+console.log(newBookArr.addNewObj('Me and Iren','My-self'))
+
+// find index
+console.log(newBookArr.findeIndex('davit-2','grdzelo'))
+
+console.log(newBookArr.removeClass('davit-1'))
+
+
+</script>

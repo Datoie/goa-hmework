@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <script>
+        //4) Default Functions
+        // without define, paraemeter is retun undefinde
+        const myFunc = (name, fullname) => {
+            return name +fullname
+        }
+        console.log(myFunc('Davit'))
+        // with define it not return undefinde || we can werie we want to defaine also
+        const myFunc2 = (name, fullname='') => {
+            return name +fullname
+        }
+        console.log(myFunc2('Davit'))
+    </script>
+</body>
+</html>
